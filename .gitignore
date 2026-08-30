@@ -1,0 +1,11 @@
+node_modules/
+dist/
+*.tsbuildinfo
+*.log
+
+# Never commit keys. The tool reads them from the environment only.
+.env
+.env.*
+!.env.example
+
+.DS_Store
