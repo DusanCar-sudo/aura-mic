@@ -1,35 +1,28 @@
 {
   "name": "aura-mic",
-  "version": "0.1.0",
-  "description": "Speech-to-text and text-to-speech for the terminal — record, transcribe, and type straight into the focused window.",
-  "license": "MIT",
-  "author": "Dusan Car",
-  "repository": { "type": "git", "url": "git+https://github.com/DusanCar-sudo/aura-mic.git" },
-  "homepage": "https://github.com/DusanCar-sudo/aura-mic#readme",
-  "bugs": { "url": "https://github.com/DusanCar-sudo/aura-mic/issues" },
-  "keywords": ["speech-to-text", "dictation", "whisper", "tts", "cli", "wayland", "ydotool"],
-  "type": "commonjs",
-  "engines": { "node": ">=18" },
+  "version": "1.0.0",
+  "description": "Aura Mic — standalone microphone dictation with ElevenLabs STT/TTS",
+  "type": "module",
   "bin": {
-    "aura-mic": "dist/cli.js",
-    "dic": "dist/cli.js"
+    "aura-mic": "dist/index.js"
   },
-  "main": "dist/dictate.js",
-  "types": "dist/dictate.d.ts",
-  "files": ["dist", "README.md", "LICENSE"],
   "scripts": {
-    "build": "tsc && node scripts/fix-bin-perms.js",
-    "typecheck": "tsc --noEmit",
-    "prepublishOnly": "npm run build"
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts"
   },
   "dependencies": {
     "chalk": "^4.1.2",
-    "minimist": "^1.2.8",
-    "openai": "^4.68.4"
+    "minimist": "^1.2.8"
   },
   "devDependencies": {
     "@types/minimist": "^1.2.5",
-    "@types/node": "^20.11.0",
-    "typescript": "^5.4.0"
-  }
+    "@types/node": "^22.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "license": "MIT"
 }
